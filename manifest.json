@@ -1,0 +1,16 @@
+{
+  "description": "Show me twitter. I do not want to login.",
+  "manifest_version": 2,
+  "name": "bypass-twitter-softwall",
+  "version": "1.0",
+  "background": {
+    "scripts": ["main.js"]
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "logo16.png",
+      "48": "logo48.png",
+      "96": "logo96.png"
+    }
+  }
+}
