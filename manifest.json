@@ -3,12 +3,21 @@
   "manifest_version": 2,
   "name": "bypass-twitter-softwall",
   "version": "1.0",
+  "content_scripts": [
+    {
+      "matches": ["*://twitter.com/*"],
+      "js": ["main.js"]
+    }
+  ],
   "background": {
-    "scripts": ["main.js"]
+    "scripts": ["background.js"]
   },
+  "permissions": [
+    "activeTab"
+  ],
   "browser_action": {
+    "default_title": "Bypass Twitter Login",
     "default_icon": {
-      "16": "logo16.png",
       "48": "logo48.png",
       "96": "logo96.png"
     }
