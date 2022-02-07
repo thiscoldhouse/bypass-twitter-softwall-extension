@@ -40,16 +40,33 @@ function removeLockoutDiv() {
 }
 
 function bypassSoftPaywall(){
-  // add scroll back-in
-  document.getElementsByTagName('html')[0].style.overflow = "scroll";
+  try {
+    // add scroll back-in
+    document.getElementsByTagName('html')[0].style.overflow = "scroll";
+  }
+  catch(e) {
+    console.log('TwitterExtensionLog: Failed to add scroll back in with error:');
+    console.log(e);
+  }
+  try {
+    // remove modal
+    let els = document.querySelectorAll('[data-testid=sheetDialog]');
+    els[0].parentElement.parentElement.style.display = "none";
+    els[0].style.display = "none"
+  }
+  catch(e) {
+    console.log('TwitterExtensionLog: Failed to removel modal with error:');
+    console.log(e);
+  }
 
-  // remove modal
-  let els = document.querySelectorAll('[data-testid=sheetDialog]');
-  document.querySelectorAll('[data-testid=sheetDialog]')[0].style.display = "none"
-
+  try {
   // remove lockout gray div
-  removeLockoutDiv();
-
+    removeLockoutDiv();
+  }
+  catch(e) {
+    console.log('TwitterExtensionLog: Failed to remove grayed out lockout div with error:');
+    console.log(e);
+  }
 }
 
 browser.runtime.onMessage.addListener(function(request){
