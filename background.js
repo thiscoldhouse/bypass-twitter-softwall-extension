@@ -1,3 +1,10 @@
+// platform agnostic shenanigans
+if (typeof browser === "undefined") {
+    var browser = chrome;
+}
+
+// modified from mozilla docs:
+// see: https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/Tabs/sendMessage
 function onError(error) {
   console.error(`Error: ${error}`);
 }

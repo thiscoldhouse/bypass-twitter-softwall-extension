@@ -1,3 +1,9 @@
+// platform agnostic shenanigans
+if (typeof browser === "undefined") {
+    var browser = chrome;
+}
+
+
 function getBackgroundColor(el){
   // A helper function for removeLockoutDiv. Returns an elements background-color.
   if (window.getComputedStyle){
