@@ -2,10 +2,13 @@
   "description": "Show me twitter. I do not want to login.",
   "manifest_version": 2,
   "name": "bypass-twitter-softwall",
-  "version": "1.2",
+  "version": "1.3",
   "content_scripts": [
     {
-      "matches": ["*://twitter.com/*"],
+      "matches": [
+        "*://twitter.com/*",
+        "*://twitter3e4tixl4xyajtrzo62zg5vztmjuricljdp2c5kshju4avyoid.onion/*"
+      ],
       "js": ["main.js"]
     }
   ],
